@@ -29,11 +29,18 @@ public class App {
             String urlImagem = filme.get("image");
             String titulo = filme.get("title");
 
-            InputStream inputStream = new URL(urlImagem).openStream();
-            String nomeArquivo = titulo + ".png";
+            
+            String nomeArquivo = titulo.replace(":", "-") + ".png";
 
             var geradora = new StickerGenerator();
-            geradora.criar(inputStream, nomeArquivo);
+            try{
+                InputStream inputStream = new URL(urlImagem).openStream();
+                System.out.println("Gerando imagem - [" + titulo + "]");
+                geradora.criar(inputStream, nomeArquivo);
+             }catch(java.io.FileNotFoundException err){
+                  System.out.println("Imagem não encontrada ou link inválido");
+             }
+            
 
             System.out.println(titulo);
             System.out.println();
@@ -41,5 +48,6 @@ public class App {
             System.out.println( );
 
         } 
+        
     }
 }
