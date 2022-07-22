@@ -27,7 +27,7 @@ public class StickerGenerator {
         graphics.drawImage(imagemOriginal, 0, 0, null);
 
         // configurar fonte 
-        Font fonte = new Font(Font.SANS_SERIF, Font.BOLD, 48);
+        Font fonte = new Font(Font.SANS_SERIF, Font.BOLD, 64);
         graphics.setColor(Color.YELLOW);
         graphics.setFont(fonte);
         
