@@ -11,9 +11,7 @@ public class StickerGenerator {
 
     public void criar(InputStream inputStream, String nomeArquivo ) throws Exception {
 
-        //leitura da imagem 
-        //InputStream inputStream = new FileInputStream(new File("entrada/imagemMaior.jpg"));
-        //InputStream inputStream = new URL().openStream();
+        
         BufferedImage imagemOriginal = ImageIO.read(inputStream);
 
         // criar nova imagem em memoria com transparencia e com tamanho novo
