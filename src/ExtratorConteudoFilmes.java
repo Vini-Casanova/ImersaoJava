@@ -17,7 +17,8 @@ public class ExtratorConteudoFilmes implements ExtratorDeConteudo{
        // preencher a lista de conteudos
        for (Map<String, String> atributos : listaAtributos) {
            String titulo = atributos.get("title");
-           String urlImagem = atributos.get("image").replaceAll("(@+)(.*).jpg$", "$1.jpg");
+           String urlImagem = atributos.get("image")
+                            .replaceAll("(@+)(.*).jpg$", "$1.jpg");
            var conteudo = new conteudo(titulo, urlImagem);
 
            conteudos.add(conteudo);
