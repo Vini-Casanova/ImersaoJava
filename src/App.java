@@ -8,8 +8,11 @@ public class App {
         //String url = "https://mocki.io/v1/9a7c1ca9-29b4-4eb3-8306-1adb9d159060";
         //ExtratorDeConteudo extrator = new ExtratorConteudoFilmes();
 
-        String url = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&start_date=2022-06-12&end_date=2022-06-14";
-        ExtratorDeConteudo extrator = new ExtratorConteudoNasa();
+        //String url = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&start_date=2022-06-12&end_date=2022-06-14";
+        //ExtratorDeConteudo extrator = new ExtratorConteudoNasa();
+
+        String url = "http://localhost:8080/linguagens";
+        ExtratorDeConteudo extrator = new ExtratorConteudoFilmes();
 
 
         var http = new ClienteHttp();
@@ -29,7 +32,7 @@ public class App {
             //Bloco de caso não encontre ou de um erro ele envie a mensagem de erro 
             try{
                 InputStream inputStream = new URL(conteudos.getUrlImagem()).openStream();
-                System.out.println("Gerando imagem - [" + conteudos.getTitulo() + "]");
+                System.out.println("Gerando imagem -" + conteudos.getTitulo());
                 geradora.criar(inputStream, conteudos.getTitulo());
              }catch(java.io.FileNotFoundException err){
                   System.out.println("Imagem não encontrada ou link inválido");
